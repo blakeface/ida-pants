@@ -1,0 +1,30 @@
+{
+	"name": "ida-pants",
+	"version": "1.0.0",
+	"description": "go ida go",
+	"main": "index.html",
+	"scripts": {
+		"start": "parcel src/index.html",
+		"build": "parcel build src/index.html"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/blakeface/ida-pants.git"
+	},
+	"keywords": [
+		"inspiration",
+		"css",
+		"fun"
+	],
+	"author": "blake netzeband <blake.netzeband@gmail.com>",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/blakeface/ida-pants/issues"
+	},
+	"homepage": "https://github.com/blakeface/ida-pants#readme",
+	"dependencies": {},
+	"devDependencies": {
+		"parcel-bundler": "^1.12.3",
+		"sass": "^1.18.0"
+	}
+}

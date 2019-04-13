@@ -1,0 +1,72 @@
+.magic {
+	$background: #e4e2f2;
+	$face: #91d4ff;
+	$flourish: #fff;
+	$shadowdots: #040351;
+	$shadow: #4d8bea;
+	$shadow2: #cbc7e3;
+
+	%text-basis {
+		font-family: "Rig Bold Face", sans-serif;
+		text-transform: uppercase;
+		font-weight: normal;
+		text-align: center;
+		margin: 0;
+	}
+
+	background-color: $background;
+	h1 {
+		@extend %text-basis;
+		font-size: 7vw;
+		top: 0%;
+		left: 50%;
+		transform: translate(-50%, 0%);
+		position: absolute;
+		color: $face;
+
+		&:before,
+		&:after,
+		span:before,
+		span:after {
+			content: attr(data-heading);
+			position: absolute;
+			overflow: hidden;
+			left: 0;
+			top: 0;
+			width: 100%;
+			z-index: 5;
+			font-weight: normal;
+			text-shadow: none;
+		}
+
+		&:before {
+			color: $flourish;
+			font-family: "Rig Bold Inline", sans-serif;
+		}
+
+		&:after {
+			font-family: "Rig Bold Coarse", sans-serif;
+			color: $shadowdots;
+		}
+	}
+
+	span {
+		&::before {
+			font-family: "Rig Bold Shadow", sans-serif;
+			color: $shadow2;
+			z-index: -1;
+		}
+
+		&::after {
+			font-family: "Rig Bold Extrude", sans-serif;
+			color: $shadow;
+			z-index: -1;
+		}
+	}
+
+	.author {
+		@extend %text-basis;
+		font-size: 2rem;
+		color: $shadowdots;
+	}
+}
