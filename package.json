@@ -22,7 +22,10 @@
 		"url": "https://github.com/blakeface/ida-pants/issues"
 	},
 	"homepage": "https://github.com/blakeface/ida-pants#readme",
-	"dependencies": {},
+	"dependencies": {
+		"autoprefixer": "^9.5.1",
+		"postcss-modules": "^1.4.1"
+	},
 	"devDependencies": {
 		"parcel-bundler": "^1.12.3",
 		"sass": "^1.18.0"
