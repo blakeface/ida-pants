@@ -1,0 +1,96 @@
+.yay {
+	/**
+	borrowed from:
+	https://tympanus.net/Development/TextTrailEffect/index4.html
+	*/
+
+	// variables
+	$text-color: #fff;
+	$font-trail-weight: 700;
+	$font-trail-lheight: 0.85;
+	$font-trail-family: Kanit, sans-serif;
+	$font-trail-size: 15vh;
+	$font-trail-family: "Fredoka One", cursive;
+
+	mix-blend-mode: color-dodge;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-image: linear-gradient(
+		350deg,
+		rgba(146, 221, 219, 1) 31.2%,
+		rgba(236, 167, 219, 1) 90.9%
+	);
+
+	.text {
+		overflow: hidden;
+		flex: 1;
+		opacity: 0;
+		pointer-events: none;
+
+		&:nth-child(6) {
+			opacity: 1;
+		}
+	}
+
+	.text-full {
+		flex: none;
+	}
+
+	.text-inner {
+		display: block;
+		color: $text-color;
+		text-transform: uppercase;
+		font-size: 3.5rem;
+		font-weight: $font-trail-weight;
+		line-height: $font-trail-lheight;
+		font-family: $font-trail-family;
+	}
+
+	.text-inner-bottom {
+		transform: translate3d(0, -40%, 0);
+	}
+
+	.text-inner-stroke {
+		-webkit-text-stroke: 2px $text-color;
+		text-stroke: 2px $text-color;
+
+		-webkit-text-fill-color: transparent;
+		text-fill-color: transparent;
+
+		color: transparent;
+	}
+
+	.ruby-wrapper {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: flex-start;
+
+		img {
+			height: 6rem;
+			width: auto;
+			margin-left: 2rem;
+		}
+
+		button {
+			border: none;
+			background: transparent;
+			text-transform: uppercase;
+			&:hover {
+				cursor: pointer;
+			}
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+}

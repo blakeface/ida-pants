@@ -1,9 +1,10 @@
-.magic {
+.do-it {
 	/**
 	borrowed from:
 	https://codepen.io/mandymichael/pen/bWqyMN
 	*/
 
+	// variables
 	$background: #e4e2f2;
 	$face: #91d4ff;
 	$flourish: #fff;
@@ -20,14 +21,15 @@
 	}
 
 	background-color: $background;
+	// keep 100vh
+	padding-top: 15vh;
+	min-height: 85vh;
+
 	h1 {
 		@extend %text-basis;
 		font-size: 7vw;
-		top: 0%;
-		left: 50%;
-		transform: translate(-50%, 0%);
-		position: absolute;
 		color: $face;
+		position: relative;
 
 		&:before,
 		&:after,
@@ -36,8 +38,8 @@
 			content: attr(data-heading);
 			position: absolute;
 			overflow: hidden;
-			left: 0;
 			top: 0;
+			left: 0;
 			width: 100%;
 			z-index: 5;
 			font-weight: normal;
@@ -67,6 +69,11 @@
 			color: $shadow;
 			z-index: -1;
 		}
+	}
+
+	.quote-wrapper {
+		width: 70vw;
+		margin: 0 auto;
 	}
 
 	.author {
