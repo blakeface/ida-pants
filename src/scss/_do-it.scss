@@ -1,84 +1,87 @@
 .do-it {
-	/**
+  /**
 	borrowed from:
 	https://codepen.io/mandymichael/pen/bWqyMN
 	*/
 
-	// variables
-	$background: #e4e2f2;
-	$face: #91d4ff;
-	$flourish: #fff;
-	$shadowdots: #040351;
-	$shadow: #4d8bea;
-	$shadow2: #cbc7e3;
+  // variables
+  $background: #e4e2f2;
+  $face: #91d4ff;
+  $flourish: #fff;
+  $shadowdots: #040351;
+  $shadow: #4d8bea;
+  $shadow2: #cbc7e3;
 
-	%text-basis {
-		font-family: "Rig Bold Face", sans-serif;
-		text-transform: uppercase;
-		font-weight: normal;
-		text-align: center;
-		margin: 0;
-	}
+  %text-basis {
+    font-family: "Rig Bold Face", sans-serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+  }
 
-	background-color: $background;
-	// keep 100vh
-	padding-top: 15vh;
-	min-height: 85vh;
+  background-color: $background;
+  // keep 100vh
+  padding-top: 15vh;
+  min-height: 85vh;
+  // for animation
+  perspective: 25px;
+  .quote-wrapper {
+    width: 70vw;
+    margin: 0 auto;
+    transition: transform 0.5s;
+  }
 
-	h1 {
-		@extend %text-basis;
-		font-size: 7vw;
-		color: $face;
-		position: relative;
+  h1 {
+    @extend %text-basis;
+    font-size: 7vw;
+    color: $face;
+    position: relative;
 
-		&:before,
-		&:after,
-		span:before,
-		span:after {
-			content: attr(data-heading);
-			position: absolute;
-			overflow: hidden;
-			top: 0;
-			left: 0;
-			width: 100%;
-			z-index: 5;
-			font-weight: normal;
-			text-shadow: none;
-		}
+    &:before,
+    &:after,
+    span:before,
+    span:after {
+      content: attr(data-heading);
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 5;
+      font-weight: normal;
+      text-shadow: none;
+    }
 
-		&:before {
-			color: $flourish;
-			font-family: "Rig Bold Inline", sans-serif;
-		}
+    &:before {
+      color: $flourish;
+      font-family: "Rig Bold Inline", sans-serif;
+    }
 
-		&:after {
-			font-family: "Rig Bold Coarse", sans-serif;
-			color: $shadowdots;
-		}
-	}
+    &:after {
+      font-family: "Rig Bold Coarse", sans-serif;
+      color: $shadowdots;
+    }
+  }
 
-	span {
-		&::before {
-			font-family: "Rig Bold Shadow", sans-serif;
-			color: $shadow2;
-			z-index: -1;
-		}
+  span {
+    &::before {
+      font-family: "Rig Bold Shadow", sans-serif;
+      color: $shadow2;
+      z-index: -1;
+    }
 
-		&::after {
-			font-family: "Rig Bold Extrude", sans-serif;
-			color: $shadow;
-			z-index: -1;
-		}
-	}
+    &::after {
+      font-family: "Rig Bold Extrude", sans-serif;
+      color: $shadow;
+      z-index: -1;
+    }
+  }
 
-	.quote-wrapper {
-		width: 70vw;
-		margin: 0 auto;
-	}
-
-	.author {
-		@extend %text-basis;
-		font-size: 2rem;
-		color: $shadowdots;
-	}
+  .author {
+    @extend %text-basis;
+    font-size: 2rem;
+    color: $shadowdots;
+    padding-top: 2rem;
+  }
 }
